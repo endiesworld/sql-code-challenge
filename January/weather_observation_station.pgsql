@@ -1,0 +1,4 @@
+-- https://www.hackerrank.com/challenges/weather-observation-station-5/problem?isFullScreen=true&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+-- Solution
+SELECT CITY, MIN(length(CITY)) OVER() AS min_len FROM STATION WHERE length(CITY) = (SELECT MIN(length(CITY)) FROM STATION ) ORDER BY CITY LIMIT 1;
+SELECT CITY, MAX(length(CITY)) OVER() AS max_len FROM STATION WHERE length(CITY) = (SELECT MAX(length(CITY)) FROM STATION )ORDER BY CITY LIMIT 1;
